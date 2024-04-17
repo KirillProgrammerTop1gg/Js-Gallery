@@ -94,6 +94,7 @@ const setModalContent = (isAdd, src, alt) => {
 }
 
 jsGalleryEl.addEventListener('click', (e) => {
+  e.preventDefault();
   const findGalleryItem = e.target.closest('.gallery__item') === null ? false : e.target.closest('.gallery__item').childNodes[1].getAttribute('href');
   if (findGalleryItem) {
     const galeryItem = galleryItems.find(galeryImg => galeryImg.original === findGalleryItem);
