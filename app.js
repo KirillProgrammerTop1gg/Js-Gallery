@@ -108,5 +108,5 @@ document.addEventListener('keydown', (e) => {
   e.key === 'Escape' ? setModalContent(false, '', '') : null;
   e.key === 'ArrowLeft' ? imgIndex = imgIndex <= 0 ? galleryItems.length - 1 : imgIndex - 1 : null;
   e.key === 'ArrowRight' ? imgIndex = imgIndex > galleryItems.length - 1 ? 0 : imgIndex + 1 : null;
-  setModalContent(true, galleryItems[imgIndex].original, galleryItems[imgIndex].description);
+  e.key === 'ArrowLeft' || e.key === 'ArrowRight' ? setModalContent(true, galleryItems[imgIndex].original, galleryItems[imgIndex].description) : null;
 });
